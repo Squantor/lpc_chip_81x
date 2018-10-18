@@ -115,3 +115,9 @@ uint32_t Chip_CRC_CRC32(const uint32_t *data, uint32_t words)
 
 	return Chip_CRC_Sum();
 }
+
+
+
+
+
+

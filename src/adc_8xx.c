@@ -1,8 +1,8 @@
 /*
- * @brief LPC8xx GPIO driver
+ * @brief LPC82x ADC driver
  *
  * @note
- * Copyright(C) NXP Semiconductors, 2012
+ * Copyright(C) NXP Semiconductors, 2014
  * All rights reserved.
  *
  * @par
@@ -47,18 +47,48 @@
  * Public functions
  ****************************************************************************/
 
-/* GPIO initilisation function */
-void Chip_GPIO_Init(LPC_GPIO_T *pGPIO)
+/* Initialize the ADC peripheral */
+void Chip_ADC_Init(LPC_ADC_T *pADC, uint32_t flags)
 {
-	Chip_Clock_EnablePeriphClock(SYSCTL_CLOCK_GPIO);
+	/* Power up ADC and enable ADC base clock */
+	Chip_SYSCTL_PowerUp(SYSCTL_SLPWAKE_ADC_PD);
+	Chip_Clock_EnablePeriphClock(SYSCTL_CLOCK_ADC);
+
+	/* Disable ADC interrupts */
+	pADC->INTEN = 0;
+
+	/* Set ADC control options */
+	pADC->CTRL = flags;
 }
 
-/* GPIO deinitialisation function */
-void Chip_GPIO_DeInit(LPC_GPIO_T *pGPIO)
+/* Shutdown ADC */
+void Chip_ADC_DeInit(LPC_ADC_T *pADC)
 {
-	Chip_Clock_DisablePeriphClock(SYSCTL_CLOCK_GPIO);
+	pADC->INTEN = 0;
+	pADC->CTRL = 0;
+
+	/* Stop ADC clock and then power down ADC */
+	Chip_Clock_DisablePeriphClock(SYSCTL_CLOCK_ADC);
+	Chip_SYSCTL_PowerDown(SYSCTL_SLPWAKE_ADC_PD);
 }
 
+/* Start ADC calibration */
+void Chip_ADC_StartCalibration(LPC_ADC_T *pADC)
+{
+	/* Set calibration mode */
+	pADC->CTRL |= ADC_CR_CALMODEBIT;
+
+	/* Clear ASYNC bit */
+	pADC->CTRL &= ~ADC_CR_ASYNMODE;
+
+	/* Setup ADC for about 500KHz (per UM) */
+	Chip_ADC_SetClockRate(pADC, 500000);
+
+	/* Clearn low power bit */
+	pADC->CTRL &= ~ADC_CR_LPWRMODEBIT;
+
+	/* Calibration is only complete when ADC_CR_CALMODEBIT bit has cleared */
+}
 
 
 

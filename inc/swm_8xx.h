@@ -288,3 +288,9 @@ STATIC INLINE bool Chip_SWM_IsEnabled(CHIP_SWM_PIN_FIXED_T pin)
 #endif
 
 #endif /* __SWM_8XX_H_ */
+
+
+
+
+
+

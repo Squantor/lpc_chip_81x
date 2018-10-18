@@ -207,3 +207,9 @@ void Chip_IRC_SetFreq_ROM(uint32_t sys)
 
 	while (resp[0] != PLL_CMD_SUCCESS) {}										/* Dead loop on fail */
 }
+
+
+
+
+
+

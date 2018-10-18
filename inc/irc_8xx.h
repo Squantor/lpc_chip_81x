@@ -70,3 +70,9 @@ void Chip_IRC_SetFreq_ROM(uint32_t sys);
 #endif
 
 #endif /* __IRC_8XX_H_ */
+
+
+
+
+
+

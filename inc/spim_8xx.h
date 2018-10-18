@@ -261,3 +261,9 @@ void Chip_SPIM_XferBlocking(LPC_SPI_T *pSPI, SPIM_XFER_T *xfer);
 #endif
 
 #endif /* __SPIM_8XX_H_ */
+
+
+
+
+
+

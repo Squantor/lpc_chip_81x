@@ -576,3 +576,9 @@ STATIC INLINE void Chip_SPI_SetXferSize(LPC_SPI_T *pSPI, uint32_t ctrlBits)
 #endif
 
 #endif /* __SPI_COMMON_8XX_H_ */
+
+
+
+
+
+

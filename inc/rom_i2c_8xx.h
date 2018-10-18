@@ -123,3 +123,9 @@ typedef struct  I2CD_API {
 #endif
 
 #endif /* __ROM_I2C_8XX_H_ */
+
+
+
+
+
+

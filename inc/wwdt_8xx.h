@@ -224,3 +224,9 @@ STATIC INLINE uint32_t Chip_WWDT_GetCurrentCount(LPC_WWDT_T *pWWDT)
 #endif
 
 #endif /* __WWDT_8XX_H_ */
+
+
+
+
+
+

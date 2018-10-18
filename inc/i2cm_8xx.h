@@ -308,3 +308,9 @@ uint32_t Chip_I2CM_XferBlocking(LPC_I2C_T *pI2C, I2CM_XFER_T *xfer);
 #endif
 
 #endif /* __I2C_8XX_H_ */
+
+
+
+
+
+

@@ -154,3 +154,9 @@ STATIC INLINE void Chip_DMATRIGMUX_SetInputTrig(LPC_DMATRIGMUX_T *pDMATRIG, DMA_
 #endif
 
 #endif /* __INMUX_8XX_H_ */
+
+
+
+
+
+

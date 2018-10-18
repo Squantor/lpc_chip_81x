@@ -153,3 +153,9 @@ void Chip_WKT_Start(LPC_WKT_T *pWKT, WKT_CLKSRC_T clkSrc, uint32_t cntVal);
 #endif
 
 #endif /* __WKT_8XX_H_ */
+
+
+
+
+
+

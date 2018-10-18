@@ -328,3 +328,9 @@ static INLINE uint32_t Chip_I2C_GetPendingInt(LPC_I2C_T *pI2C)
 #endif
 
 #endif /* __I2C_COMMON_8XX_H_ */
+
+
+
+
+
+

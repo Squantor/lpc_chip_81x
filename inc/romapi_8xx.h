@@ -80,7 +80,7 @@ typedef struct ROM_API {
 /**
  * @brief LPC8XX IAP_ENTRY API function type
  */
-static INLINE void iap_entry(uint32_t cmd_param[], uint32_t status_result[])
+static INLINE void iap_entry(unsigned int cmd_param[], unsigned int status_result[])
 {
 	((IAP_ENTRY_T) IAP_ENTRY_LOCATION)(cmd_param, status_result);
 }
@@ -94,3 +94,9 @@ static INLINE void iap_entry(uint32_t cmd_param[], uint32_t status_result[])
 #endif
 
 #endif /* __ROMAPI_8XX_H_ */
+
+
+
+
+
+

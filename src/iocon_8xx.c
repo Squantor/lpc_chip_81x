@@ -126,3 +126,9 @@ void Chip_IOCON_SetPinMuxing(LPC_IOCON_T *pIOCON, const PINMUX_GRP_T* pinArray, 
 		Chip_IOCON_PinMuxSet(pIOCON, pinArray[ix].pin, pinArray[ix].modefunc);
 	}
 }
+
+
+
+
+
+

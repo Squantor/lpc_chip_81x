@@ -291,3 +291,9 @@ void Chip_Clock_SetIOCONCLKDIV(CHIP_PIN_CLKDIV_T reg, uint8_t div)
 	int t_reg = IOCONCLK_MAX-reg;
 	LPC_SYSCTL->IOCONCLKDIV[t_reg] = div;
 }
+
+
+
+
+
+

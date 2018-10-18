@@ -128,3 +128,9 @@ void Chip_ACMP_SetupVoltLadder(LPC_CMP_T *pACMP, uint32_t ladsel, bool ladrefVDD
 	}
 	pACMP->LAD = reg | (ladsel << 1);
 }
+
+
+
+
+
+

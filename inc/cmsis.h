@@ -103,7 +103,7 @@ typedef enum {
 	UART1_IRQn                    = 4,		/*!< USART1                                           */
 	UART2_IRQn                    = 5,		/*!< USART2                                           */
 	Reserved1_IRQn                = 6,		/*!< Reserved Interrupt                               */
-	Reserved2_IRQn                = 7,		/*!< Reserved Interrupt                               */
+	I2C1_IRQn                     = 7,		/*!< I2C1                                             */
 	I2C0_IRQn                     = 8,		/*!< I2C0                                             */
 	I2C_IRQn                      = 8,		/*!< Alias for I2C0                                   */
 	SCT_IRQn                      = 9,		/*!< SCT                                              */
@@ -113,14 +113,14 @@ typedef enum {
 	BOD_IRQn                      = 13,		/*!< BOD                                              */
 	FLASH_IRQn                    = 14,		/*!< Flash interrupt                                  */
 	WKT_IRQn                      = 15,		/*!< WKT Interrupt                                    */
-	Reserved4_IRQn                = 16,		/*!< Reserved Interrupt                               */
-	Reserved5_IRQn                = 17,		/*!< Reserved Interrupt                               */
-	Reserved6_IRQn                = 18,		/*!< Reserved Interrupt                               */
-	Reserved7_IRQn                = 19,		/*!< Reserved Interrupt                               */
-	Reserved8_IRQn                = 20,		/*!< Reserved Interrupt                               */
-	Reserved9_IRQn                = 21,		/*!< Reserved Interrupt                               */
-	Reserved10_IRQn               = 22,		/*!< Reserved Interrupt                               */
-	Reserved11_IRQn               = 23,		/*!< Reserved Interrupt                               */
+	ADC_SEQA_IRQn                 = 16,		/*!< ADC sequence A completion                        */
+	ADC_SEQB_IRQn                 = 17,		/*!< ADC sequence B completion                        */
+	ADC_THCMP_IRQn                = 18,		/*!< ADC threshold compare                            */
+	ADC_OVR_IRQn                  = 19,		/*!< ADC overrun                                      */
+	DMA_IRQn                      = 20,		/*!< Reserved Interrupt                               */
+	I2C2_IRQn                     = 21,		/*!< Reserved Interrupt                               */
+	I2C3_IRQn                     = 22,		/*!< Reserved Interrupt                               */
+	Reserved2_IRQn                = 23,		/*!< Reserved Interrupt                               */
 	PININT0_IRQn                  = 24,		/*!< External Interrupt 0                             */
 	PIN_INT0_IRQn                 = 24,		/*!< External Interrupt 0 (alias)                     */
 	PININT1_IRQn                  = 25,		/*!< External Interrupt 1                             */
@@ -154,3 +154,9 @@ typedef enum {
 #endif
 
 #endif /* __CMSIS_H_ */
+
+
+
+
+
+

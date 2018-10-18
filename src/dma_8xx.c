@@ -1,8 +1,8 @@
 /*
- * @brief LPC8xx GPIO driver
+ * @brief LPC82x DMA chip driver
  *
  * @note
- * Copyright(C) NXP Semiconductors, 2012
+ * Copyright(C) NXP Semiconductors, 2013
  * All rights reserved.
  *
  * @par
@@ -39,6 +39,19 @@
  * Public types/enumerations/variables
  ****************************************************************************/
 
+/* DMA SRAM table - this can be optionally used with the Chip_DMA_SetSRAMBase()
+   function if a DMA SRAM table is needed. This table is correctly aligned for
+     the DMA controller. */
+#ifdef __ICCARM__
+#define ASTR(str)  #str
+#define ALIGN(x) _Pragma(ASTR(data_alignment=##x))
+#else
+#define ALIGN(x) __attribute__((aligned(x)))
+#endif
+
+/* Alignment of 512 bytes */
+ALIGN(512) DMA_CHDESC_T Chip_DMA_Table[MAX_DMA_CHANNEL];
+
 /*****************************************************************************
  * Private functions
  ****************************************************************************/
@@ -46,18 +59,6 @@
 /*****************************************************************************
  * Public functions
  ****************************************************************************/
-
-/* GPIO initilisation function */
-void Chip_GPIO_Init(LPC_GPIO_T *pGPIO)
-{
-	Chip_Clock_EnablePeriphClock(SYSCTL_CLOCK_GPIO);
-}
-
-/* GPIO deinitialisation function */
-void Chip_GPIO_DeInit(LPC_GPIO_T *pGPIO)
-{
-	Chip_Clock_DisablePeriphClock(SYSCTL_CLOCK_GPIO);
-}
 
 
 

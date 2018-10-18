@@ -241,3 +241,9 @@ Status Chip_SPI_Int_RWFrames(LPC_SPI_T *pSPI, SPI_DATA_SETUP_T *pXfSetup)
 
 	return SUCCESS;
 }
+
+
+
+
+
+

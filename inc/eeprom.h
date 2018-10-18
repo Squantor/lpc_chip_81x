@@ -68,3 +68,9 @@ uint8_t Chip_EEPROM_Read(uint32_t srcAdd, uint8_t *ptr, uint32_t bytesrd);
 #endif
 
 #endif /* __EEPROM_H_ */
+
+
+
+
+
+

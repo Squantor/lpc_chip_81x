@@ -32,5 +32,12 @@
 
 /* Build for LPC8XX chip family */
 #define CHIP_LPC8XX
+#define CHIP_LPC82X
 
 #endif /* __SYS_CONFIG_H_ */
+
+
+
+
+
+

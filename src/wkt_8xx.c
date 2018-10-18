@@ -76,3 +76,9 @@ void Chip_WWDT_ClearStatusFlag(LPC_WWDT_T *pWWDT, uint32_t status)
 		pWWDT->MOD = WWDT_WDMOD_WDINT | (pWWDT->MOD & ~WWDT_MOD_RESERVED);
 	}
 }
+
+
+
+
+
+

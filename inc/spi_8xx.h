@@ -291,3 +291,9 @@ uint32_t Chip_SPI_ReadFrames_Blocking(LPC_SPI_T *pSPI, SPI_DATA_SETUP_T *pXfSetu
 #endif
 
 #endif /* __SPI_8XX_H_ */
+
+
+
+
+
+

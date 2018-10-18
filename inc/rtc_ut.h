@@ -82,3 +82,9 @@ void ConvertTimeRtc(struct tm *pTime, uint32_t *rtcTick);
 #endif
 
 #endif /* __RTC_UT_H_ */
+
+
+
+
+
+

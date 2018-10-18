@@ -79,3 +79,9 @@ void Chip_SCT_SetConflictResolution(LPC_SCT_T *pSCT, uint8_t outnum, uint8_t val
 	tem = pSCT->RES & ~((0x03 << (2 * outnum))|SCT_RES_RESERVED);
 	pSCT->RES = tem | (value << (2 * outnum));
 }
+
+
+
+
+
+

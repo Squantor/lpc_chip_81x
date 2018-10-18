@@ -341,3 +341,9 @@ STATIC INLINE void Chip_MRT_ClearIntPending(uint32_t mask)
 #endif
 
 #endif /* __MRT_8XX_H_ */
+
+
+
+
+
+

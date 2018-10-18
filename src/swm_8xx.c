@@ -70,3 +70,9 @@ void Chip_SWM_FixedPinEnable(CHIP_SWM_PIN_FIXED_T pin, bool enable)
 		Chip_SWM_DisableFixedPin(pin);
 	}
 }
+
+
+
+
+
+

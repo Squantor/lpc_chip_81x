@@ -214,3 +214,9 @@ typedef bool BOOL_8;
  */
 
 #endif /* __LPC_TYPES_H_ */
+
+
+
+
+
+

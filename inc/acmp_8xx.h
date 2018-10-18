@@ -251,3 +251,9 @@ STATIC INLINE void Chip_ACMP_DisableVoltLadder(LPC_CMP_T *pACMP)
 #endif
 
 #endif /* __ACMP_8XX_H_ */
+
+
+
+
+
+

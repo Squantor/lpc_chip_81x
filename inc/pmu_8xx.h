@@ -235,3 +235,9 @@ STATIC INLINE void Chip_PMU_ClearPowerDownControl(LPC_PMU_T *pPMU, uint32_t flag
 #endif
 
 #endif /* __PMU_8XX_H_ */
+
+
+
+
+
+

@@ -79,3 +79,9 @@ void Chip_WKT_Start(LPC_WKT_T *pWKT, WKT_CLKSRC_T clkSrc, uint32_t cntVal)
 	/* Set the WKT counter & start it */
 	pWKT->COUNT = cntVal;
 }
+
+
+
+
+
+

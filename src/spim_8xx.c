@@ -229,3 +229,9 @@ void Chip_SPIM_XferBlocking(LPC_SPI_T *pSPI, SPIM_XFER_T *xfer)
 		Chip_SPIM_XferHandler(pSPI, xfer);
 	}
 }
+
+
+
+
+
+

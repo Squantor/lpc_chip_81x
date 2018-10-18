@@ -103,3 +103,9 @@ uint32_t StopWatch_UsToTicks(uint32_t uS)
 {
 	return uS * ticksPerUs;
 }
+
+
+
+
+
+

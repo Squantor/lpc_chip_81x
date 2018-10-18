@@ -335,3 +335,9 @@ uint32_t Chip_I2CS_XferHandler(LPC_I2C_T *pI2C, const I2CS_XFER_T *xfers);
 #endif
 
 #endif /* __I2CS_8XX_H_ */
+
+
+
+
+
+

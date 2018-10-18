@@ -79,3 +79,9 @@ void Chip_PININT_SetPatternMatchConfig(LPC_PIN_INT_T *pPININT, Chip_PININT_BITSL
 		}
 	}
 }
+
+
+
+
+
+

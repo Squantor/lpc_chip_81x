@@ -335,3 +335,9 @@ void Chip_IOCON_PinSetI2CMode(LPC_IOCON_T *pIOCON, CHIP_PINx_T pin, CHIP_PIN_I2C
 #endif
 
 #endif /* __IOCON_8XX_H_ */
+
+
+
+
+
+

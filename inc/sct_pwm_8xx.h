@@ -173,3 +173,9 @@ void Chip_SCTPWM_SetOutPin(LPC_SCT_T *pSCT, uint8_t index, uint8_t pin);
 #endif
 
 #endif /* __SCT_PWM_8XX_H_ */
+
+
+
+
+
+

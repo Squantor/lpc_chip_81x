@@ -574,3 +574,9 @@ STATIC INLINE uint32_t Chip_GPIO_ReadValue(LPC_GPIO_T *pGPIO, uint8_t portNum)
 #endif
 
 #endif /* __GPIO_8XX_H_ */
+
+
+
+
+
+

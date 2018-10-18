@@ -105,3 +105,9 @@ void Chip_SYSCTL_PowerUp(uint32_t powerupmask)
 	/* Update power states with required register bits */
 	LPC_SYSCTL->PDRUNCFG = (PDWAKEUPWRMASK | pdrun);
 }
+
+
+
+
+
+

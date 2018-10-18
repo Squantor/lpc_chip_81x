@@ -95,3 +95,9 @@ void Chip_I2C_DeInit(LPC_I2C_T *pI2C)
 	/* Disable I2C clock */
 	Chip_Clock_DisablePeriphClock(I2C_GetClockID(pI2C));
 }
+
+
+
+
+
+

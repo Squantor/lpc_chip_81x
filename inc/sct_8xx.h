@@ -456,3 +456,9 @@ void Chip_SCT_DeInit(LPC_SCT_T *pSCT);
 #endif
 
 #endif /* __SCT_8XX_H_ */
+
+
+
+
+
+

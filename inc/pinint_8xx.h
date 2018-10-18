@@ -371,3 +371,9 @@ STATIC INLINE void Chip_PININT_DisablePatternMatchRxEv(LPC_PIN_INT_T *pPININT)
 #endif
 
 #endif /* __PININT_8XX_H_ */
+
+
+
+
+
+

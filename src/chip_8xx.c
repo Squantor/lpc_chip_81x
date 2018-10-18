@@ -57,3 +57,9 @@ void SystemCoreClockUpdate(void)
 	/* CPU core speed */
 	SystemCoreClock = Chip_Clock_GetSystemClockRate();
 }
+
+
+
+
+
+
