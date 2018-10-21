@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeLite_Project Name="lpc_chip_8xx" Version="10.0.0" InternalType="">
+  <Plugins>
+    <Plugin Name="qmake">
+      <![CDATA[00020001N0005Debug0000000000000001N0007Release000000000000]]>
+    </Plugin>
+  </Plugins>
+  <VirtualDirectory Name="inc">
+    <File Name="inc/sys_config.h"/>
+    <File Name="inc/iap.h"/>
+    <File Name="inc/pinint_8xx.h"/>
+    <File Name="inc/wkt_8xx.h"/>
+    <File Name="inc/cr_section_macros.h"/>
+    <File Name="inc/cr_mtb_buffer.h"/>
+    <File Name="inc/gpio_8xx.h"/>
+    <File Name="inc/core_cmFunc.h"/>
+    <File Name="inc/i2cs_8xx.h"/>
+    <File Name="inc/rom_i2c_8xx.h"/>
+    <File Name="inc/error.h"/>
+    <File Name="inc/error_8xx.h"/>
+    <File Name="inc/core_cmInstr.h"/>
+    <File Name="inc/spim_8xx.h"/>
+    <File Name="inc/mrt_8xx.h"/>
+    <File Name="inc/lpc_types.h"/>
+    <File Name="inc/fmc_8xx.h"/>
+    <File Name="inc/romapi_8xx.h"/>
+    <File Name="inc/core_cm0plus.h"/>
+    <File Name="inc/i2cm_8xx.h"/>
+    <File Name="inc/sct_8xx.h"/>
+    <File Name="inc/rom_uart_8xx.h"/>
+    <File Name="inc/irc_8xx.h"/>
+    <File Name="inc/adc_8xx.h"/>
+    <File Name="inc/packing.h"/>
+    <File Name="inc/sct_pwm_8xx.h"/>
+    <File Name="inc/dma_8xx.h"/>
+    <File Name="inc/syscon_8xx.h"/>
+    <File Name="inc/i2c_common_8xx.h"/>
+    <File Name="inc/wwdt_8xx.h"/>
+    <File Name="inc/swm_8xx.h"/>
+    <File Name="inc/chip.h"/>
+    <File Name="inc/rtc_ut.h"/>
+    <File Name="inc/inmux_8xx.h"/>
+    <File Name="inc/spis_8xx.h"/>
+    <File Name="inc/spi_8xx.h"/>
+    <File Name="inc/stopwatch.h"/>
+    <File Name="inc/uart_8xx.h"/>
+    <File Name="inc/rom_pwr_8xx.h"/>
+    <File Name="inc/iocon_8xx.h"/>
+    <File Name="inc/ring_buffer.h"/>
+    <File Name="inc/pmu_8xx.h"/>
+    <File Name="inc/cmsis.h"/>
+    <File Name="inc/eeprom.h"/>
+    <File Name="inc/crc_8xx.h"/>
+    <File Name="inc/clock_8xx.h"/>
+    <File Name="inc/spi_common_8xx.h"/>
+    <File Name="inc/acmp_8xx.h"/>
+    <VirtualDirectory Name="NXP">
+      <File Name="inc/NXP/crp.h"/>
+    </VirtualDirectory>
+  </VirtualDirectory>
+  <VirtualDirectory Name="src">
+    <File Name="src/sct_8xx.c"/>
+    <File Name="src/wwdt_8xx.c"/>
+    <File Name="src/swm_8xx.c"/>
+    <File Name="src/iocon_8xx.c"/>
+    <File Name="src/i2cs_8xx.c"/>
+    <File Name="src/dma_8xx.c"/>
+    <File Name="src/irc_8xx.c"/>
+    <File Name="src/chip_8xx.c"/>
+    <File Name="src/spis_8xx.c"/>
+    <File Name="src/stopwatch_8xx.c"/>
+    <File Name="src/clock_8xx.c"/>
+    <File Name="src/sct_pwm_8xx.c"/>
+    <File Name="src/acmp_8xx.c"/>
+    <File Name="src/wkt_8xx.c"/>
+    <File Name="src/spi_8xx.c"/>
+    <File Name="src/i2c_common_8xx.c"/>
+    <File Name="src/uart_8xx.c"/>
+    <File Name="src/adc_8xx.c"/>
+    <File Name="src/crc_8xx.c"/>
+    <File Name="src/pinint_8xx.c"/>
+    <File Name="src/pmu_8xx.c"/>
+    <File Name="src/spim_8xx.c"/>
+    <File Name="src/iap.c"/>
+    <File Name="src/i2cm_8xx.c"/>
+    <File Name="src/gpio_8xx.c"/>
+    <File Name="src/sysinit_8xx.c"/>
+    <File Name="src/ring_buffer.c"/>
+    <File Name="src/syscon_8xx.c"/>
+  </VirtualDirectory>
+  <Description/>
+  <Dependencies/>
+  <Settings Type="Dynamic Library">
+    <GlobalSettings>
+      <Compiler Options="" C_Options="" Assembler="">
+        <IncludePath Value="."/>
+      </Compiler>
+      <Linker Options="">
+        <LibraryPath Value="."/>
+      </Linker>
+      <ResourceCompiler Options=""/>
+    </GlobalSettings>
+    <Configuration Name="Debug" CompilerType="Cross GCC ( arm-none-eabi )" DebuggerType="GNU gdb debugger" Type="Static Library" BuildCmpWithGlobalSettings="append" BuildLnkWithGlobalSettings="append" BuildResWithGlobalSettings="append">
+      <Compiler Options="-g" C_Options="-g" Assembler="" Required="yes" PreCompiledHeader="" PCHInCommandLine="no" PCHFlags="" PCHFlagsPolicy="0">
+        <IncludePath Value="."/>
+      </Compiler>
+      <Linker Options="" Required="yes"/>
+      <ResourceCompiler Options="" Required="no"/>
+      <General OutputFile="./bin/debug/liblpc_chip_8xx.a" IntermediateDirectory="./build/debug" Command="" CommandArguments="" UseSeparateDebugArgs="no" DebugArguments="" WorkingDirectory="." PauseExecWhenProcTerminates="yes" IsGUIProgram="no" IsEnabled="yes"/>
+      <BuildSystem Name="Default"/>
+      <Environment EnvVarSetName="&lt;Use Defaults&gt;" DbgSetName="&lt;Use Defaults&gt;">
+        <![CDATA[]]>
+      </Environment>
+      <Debugger IsRemote="no" RemoteHostName="" RemoteHostPort="" DebuggerPath="" IsExtended="no">
+        <DebuggerSearchPaths/>
+        <PostConnectCommands/>
+        <StartupCommands/>
+      </Debugger>
+      <PreBuild/>
+      <PostBuild/>
+      <CustomBuild Enabled="yes">
+        <RebuildCommand/>
+        <CleanCommand>make clean</CleanCommand>
+        <BuildCommand>make debug -j4</BuildCommand>
+        <PreprocessFileCommand/>
+        <SingleFileCommand/>
+        <MakefileGenerationCommand/>
+        <ThirdPartyToolName>None</ThirdPartyToolName>
+        <WorkingDirectory>.</WorkingDirectory>
+      </CustomBuild>
+      <AdditionalRules>
+        <CustomPostBuild/>
+        <CustomPreBuild/>
+      </AdditionalRules>
+      <Completion EnableCpp11="no" EnableCpp14="no">
+        <ClangCmpFlagsC/>
+        <ClangCmpFlags/>
+        <ClangPP/>
+        <SearchPaths/>
+      </Completion>
+    </Configuration>
+    <Configuration Name="Release" CompilerType="Cross GCC ( arm-none-eabi )" DebuggerType="GNU gdb debugger" Type="Dynamic Library" BuildCmpWithGlobalSettings="append" BuildLnkWithGlobalSettings="append" BuildResWithGlobalSettings="append">
+      <Compiler Options="" C_Options="" Assembler="" Required="yes" PreCompiledHeader="" PCHInCommandLine="no" PCHFlags="" PCHFlagsPolicy="0">
+        <IncludePath Value="."/>
+      </Compiler>
+      <Linker Options="-O2" Required="yes"/>
+      <ResourceCompiler Options="" Required="no"/>
+      <General OutputFile="./bin/release/lpc_chip_8xx.a" IntermediateDirectory="./build/release" Command="" CommandArguments="" UseSeparateDebugArgs="no" DebugArguments="" WorkingDirectory="." PauseExecWhenProcTerminates="yes" IsGUIProgram="no" IsEnabled="yes"/>
+      <BuildSystem Name="Default"/>
+      <Environment EnvVarSetName="&lt;Use Defaults&gt;" DbgSetName="&lt;Use Defaults&gt;">
+        <![CDATA[]]>
+      </Environment>
+      <Debugger IsRemote="no" RemoteHostName="" RemoteHostPort="" DebuggerPath="" IsExtended="no">
+        <DebuggerSearchPaths/>
+        <PostConnectCommands/>
+        <StartupCommands/>
+      </Debugger>
+      <PreBuild/>
+      <PostBuild/>
+      <CustomBuild Enabled="yes">
+        <RebuildCommand/>
+        <CleanCommand>make clean</CleanCommand>
+        <BuildCommand>make release -j4</BuildCommand>
+        <PreprocessFileCommand/>
+        <SingleFileCommand/>
+        <MakefileGenerationCommand/>
+        <ThirdPartyToolName>None</ThirdPartyToolName>
+        <WorkingDirectory>.</WorkingDirectory>
+      </CustomBuild>
+      <AdditionalRules>
+        <CustomPostBuild/>
+        <CustomPreBuild/>
+      </AdditionalRules>
+      <Completion EnableCpp11="no" EnableCpp14="no">
+        <ClangCmpFlagsC/>
+        <ClangCmpFlags/>
+        <ClangPP/>
+        <SearchPaths/>
+      </Completion>
+    </Configuration>
+  </Settings>
+</CodeLite_Project>
