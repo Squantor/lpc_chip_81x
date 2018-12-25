@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>lpc_chip_82x</name>
+	<name>lpc_chip_8xx</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -24,5 +24,3 @@
 		<nature>org.eclipse.cdt.managedbuilder.core.ScannerConfigNature</nature>
 	</natures>
 </projectDescription>
-
-
