@@ -1,5 +1,5 @@
 # Project settings
-BIN_NAME = liblpc_chip_8xx
+BIN_NAME = liblpc_chip_82x
 SOURCES = src/acmp_8xx.c src/chip_8xx.c src/clock_8xx.c src/crc_8xx.c src/gpio_8xx.c \
 src/i2c_common_8xx.c src/i2cm_8xx.c src/i2cs_8xx.c src/iap.c src/iocon_8xx.c src/irc_8xx.c \
 src/pinint_8xx.c src/pmu_8xx.c src/ring_buffer.c src/sct_8xx.c src/sct_pwm_8xx.c \
