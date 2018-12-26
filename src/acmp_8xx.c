@@ -44,6 +44,7 @@
  * Public functions
  ****************************************************************************/
 
+#pragma GCC diagnostic ignored "-Wunused-parameter"
 /* Initializes the ACMP */
 void Chip_ACMP_Init(LPC_CMP_T *pACMP)
 {
@@ -57,6 +58,7 @@ void Chip_ACMP_Deinit(LPC_CMP_T *pACMP)
 	Chip_Clock_DisablePeriphClock(SYSCTL_CLOCK_ACOMP);
 	Chip_SYSCTL_PowerDown(SYSCTL_SLPWAKE_ACMP_PD);
 }
+#pragma GCC diagnostic pop
 
 /* Clears the ACMP interrupt (EDGECLR bit) */
 void Chip_ACMP_EdgeClear(LPC_CMP_T *pACMP)

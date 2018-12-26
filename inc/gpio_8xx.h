@@ -344,7 +344,7 @@ STATIC INLINE void Chip_GPIO_SetPortDIR(LPC_GPIO_T *pGPIO, uint8_t port, uint32_
  * to set PIN0_5 and PIN0_18 to output and PIN0_1 and PIN0_10 as input set @a outMask to
  * ((1 << 5) | (1 << 18)).
  */
-STATIC INLINE void Chip_GPIO_SetPortDIRMask(LPC_GPIO_T *pGPIO, uint8_t port, uint32_t pinMask, bool outMask)
+STATIC INLINE void Chip_GPIO_SetPortDIRMask(LPC_GPIO_T *pGPIO, uint8_t port, uint32_t pinMask, uint32_t outMask)
 {
 	Chip_GPIO_SetPortDIRInput(pGPIO, port, pinMask & ~outMask);
 	Chip_GPIO_SetPortDIROutput(pGPIO, port, pinMask & outMask);

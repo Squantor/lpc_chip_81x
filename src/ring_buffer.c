@@ -90,8 +90,11 @@ int RingBuffer_InsertMult(RINGBUFF_T *RingBuff, const void *data, int num)
 
 	/* Calculate the segment lengths */
 	cnt1 = cnt2 = RingBuffer_GetFree(RingBuff);
+// altough this would never occur this is still an ugly solution
+#pragma GCC diagnostic ignored "-Wsign-compare"
 	if (RB_INDH(RingBuff) + cnt1 >= RingBuff->count)
 		cnt1 = RingBuff->count - RB_INDH(RingBuff);
+#pragma GCC diagnostic pop
 	cnt2 -= cnt1;
 
 	cnt1 = MIN(cnt1, num);
@@ -142,8 +145,11 @@ int RingBuffer_PopMult(RINGBUFF_T *RingBuff, void *data, int num)
 
 	/* Calculate the segment lengths */
 	cnt1 = cnt2 = RingBuffer_GetCount(RingBuff);
+// altough this would never occur this is still an ugly solution
+#pragma GCC diagnostic ignored "-Wsign-compare"
 	if (RB_INDT(RingBuff) + cnt1 >= RingBuff->count)
 		cnt1 = RingBuff->count - RB_INDT(RingBuff);
+#pragma GCC diagnostic pop
 	cnt2 -= cnt1;
 
 	cnt1 = MIN(cnt1, num);

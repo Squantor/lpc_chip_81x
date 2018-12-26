@@ -47,6 +47,7 @@
  * Public functions
  ****************************************************************************/
 
+#pragma GCC diagnostic ignored "-Wunused-parameter"
 /* GPIO initilisation function */
 void Chip_GPIO_Init(LPC_GPIO_T *pGPIO)
 {
@@ -58,6 +59,7 @@ void Chip_GPIO_DeInit(LPC_GPIO_T *pGPIO)
 {
 	Chip_Clock_DisablePeriphClock(SYSCTL_CLOCK_GPIO);
 }
+#pragma GCC diagnostic pop
 
 
 

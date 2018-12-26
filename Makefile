@@ -19,7 +19,7 @@ AR = ar
 OBJDUMP = objdump
 
 # Toolchain flags
-COMPILE_FLAGS = -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -std=c11 -mcpu=cortex-m0 -mthumb
+COMPILE_FLAGS = -Wall -Wextra -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -std=c11 -mcpu=cortex-m0 -mthumb
 DEFINES = -DCORE_M0PLUS
 RDEFINES = -DNDEBUG
 DDEFINES = -DDEBUG

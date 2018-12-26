@@ -58,12 +58,13 @@ void Chip_WWDT_Init(LPC_WWDT_T *pWWDT)
 	pWWDT->WARNINT   = 0xFFFF;
 	pWWDT->WINDOW    = 0xFFFFFF;
 }
-
+#pragma GCC diagnostic ignored "-Wunused-parameter"
 /* Shutdown the Watchdog timer */
 void Chip_WWDT_DeInit(LPC_WWDT_T *pWWDT)
 {
 	Chip_Clock_DisablePeriphClock(SYSCTL_CLOCK_WWDT);
 }
+#pragma GCC diagnostic pop
 
 /* Clear WWDT interrupt status flags */
 void Chip_WWDT_ClearStatusFlag(LPC_WWDT_T *pWWDT, uint32_t status)

@@ -91,6 +91,7 @@ STATIC void SPI_Receive_Data(LPC_SPI_T *pSPI,
  * Public functions
  ****************************************************************************/
 
+#pragma GCC diagnostic ignored "-Wunused-parameter"
 /* Calculate the Clock Rate Divider for SPI Peripheral */
 uint32_t Chip_SPI_CalClkRateDivider(LPC_SPI_T *pSPI, uint32_t bitRate)
 {
@@ -104,6 +105,7 @@ uint32_t Chip_SPI_CalClkRateDivider(LPC_SPI_T *pSPI, uint32_t bitRate)
 
 	return DivVal;
 }
+#pragma GCC diagnostic pop
 
 /* Configure SPI Delay parameters */
 void Chip_SPI_DelayConfig(LPC_SPI_T *pSPI, SPI_DELAY_CONFIG_T *pConfig)

@@ -47,6 +47,7 @@ static volatile bool deasserted;
  * Private functions
  ****************************************************************************/
 
+#pragma GCC diagnostic ignored "-Wunused-parameter"
 /* Determine SSEL associated with the current data value */
 static uint8_t Chip_SPIS_FindSSEL(LPC_SPI_T *pSPI, uint32_t data)
 {
@@ -62,6 +63,7 @@ static uint8_t Chip_SPIS_FindSSEL(LPC_SPI_T *pSPI, uint32_t data)
 
 	return ssel;
 }
+#pragma GCC diagnostic pop
 
 /*****************************************************************************
  * Public functions

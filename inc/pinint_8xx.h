@@ -132,6 +132,7 @@ typedef enum Chip_PININT_BITSLICE_CFG {
     PININT_PATTEREVENT             = 0x7	/*!< Match occurs on event */    
 } Chip_PININT_BITSLICE_CFG_T;
 
+#pragma GCC diagnostic ignored "-Wunused-parameter"
 /**
  * @brief	Initialize Pin interrupt block
  * @param	pPININT	: The base address of Pin interrupt block
@@ -146,6 +147,7 @@ STATIC INLINE void Chip_PININT_Init(LPC_PIN_INT_T *pPININT) {}
  * @return	Nothing
  */
 STATIC INLINE void Chip_PININT_DeInit(LPC_PIN_INT_T *pPININT) {}
+#pragma GCC diagnostic pop
 
 /**
  * @brief	Configure the pins as edge sensitive in Pin interrupt block 

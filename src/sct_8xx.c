@@ -47,6 +47,7 @@
  * Public functions
  ****************************************************************************/
 
+#pragma GCC diagnostic ignored "-Wunused-parameter"
 /* Initialize SCT */
 void Chip_SCT_Init(LPC_SCT_T *pSCT)
 {
@@ -59,6 +60,7 @@ void Chip_SCT_DeInit(LPC_SCT_T *pSCT)
 {
 	Chip_Clock_DisablePeriphClock(SYSCTL_CLOCK_SCT);
 }
+#pragma GCC diagnostic pop
 
 /* Set/Clear SCT control register */
 void Chip_SCT_SetClrControl(LPC_SCT_T *pSCT, uint32_t value, FunctionalState ena)
