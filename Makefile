@@ -1,5 +1,5 @@
 # get project settings
-include src/Makefile.inc
+include src/Makefile.mk
 # generic embedded makefile for libraries
 
 INCLUDES += 
@@ -13,8 +13,8 @@ DLIBS += $(LIBS)
 MAKE = make
 MKDIR = mkdir
 RM = rm
-CXX = gcc
-CPP = g++
+C_COMPILER = gcc
+CXX_COMPILER = g++
 TOOLCHAIN_PREFIX = arm-none-eabi-
 SIZE = size
 AR = ar
@@ -22,16 +22,16 @@ OBJDUMP = objdump
 OBJCOPY = objcopy
 
 # Toolchain flags
-COMPILE_CXX_FLAGS += -std=gnu11 -Wall -Wextra -Wno-main -fno-common -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections 
-COMPILE_CPP_FLAGS += -std=c++17 -Wall -Wextra -Wno-main -fno-common -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -fno-rtti -fno-exceptions 
+COMPILE_C_FLAGS += -std=gnu11 -Wall -Wextra -Wno-main -fno-common -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections 
+COMPILE_CXX_FLAGS += -std=c++17 -Wall -Wextra -Wno-main -fno-common -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -fno-rtti -fno-exceptions 
 COMPILE_ASM_FLAGS += -c -x assembler-with-cpp
 DEFINES += -D__$(MCU)__ -DCORE_M0PLUS
 DEFINES_RELEASE = -DNDEBUG
 DEFINES_DEBUG = -DDEBUG
-CXX_RELEASE_COMPILE_FLAGS = -Os -g  
-CXX_DEBUG_COMPILE_FLAGS = -Og -g3 
-CPP_RELEASE_COMPILE_FLAGS = -Os -g 
-CPP_DEBUG_COMPILE_FLAGS = -Og -g3
+C_RELEASE_COMPILE_FLAGS = -Os -g  
+C_DEBUG_COMPILE_FLAGS = -Og -g3 
+CXX_RELEASE_COMPILE_FLAGS = -Os -g 
+CXX_DEBUG_COMPILE_FLAGS = -Og -g3
 ASM_RELEASE_COMPILE_FLAGS = 
 ASM_DEBUG_COMPILE_FLAGS = -g3
 
@@ -49,13 +49,13 @@ LDSCRIPT = -T"ld/$(MCU).ld"
 print-%: ; @echo $*=$($*)
 
 # Combine compiler and linker flags
+release: export CFLAGS := $(COMPILE_C_FLAGS) $(C_RELEASE_COMPILE_FLAGS) $(DEFINES_RELEASE) $(DEFINES)
 release: export CXXFLAGS := $(COMPILE_CXX_FLAGS) $(CXX_RELEASE_COMPILE_FLAGS) $(DEFINES_RELEASE) $(DEFINES)
-release: export CPPFLAGS := $(COMPILE_CPP_FLAGS) $(CPP_RELEASE_COMPILE_FLAGS) $(DEFINES_RELEASE) $(DEFINES)
 release: export ASMFLAGS := $(COMPILE_ASM_FLAGS) $(ASM_RELEASE_COMPILE_FLAGS) $(DEFINES_RELEASE) $(DEFINES)
 release: export LDFLAGS := $(LINK_FLAGS) $(LINK_FLAGS_RELEASE) $(LIBDIR) $(RLIBDIR) $(LDSCRIPT)
 release: export LIBS := $(LIBS) $(RLIBS)
-debug: export CXXFLAGS := $(CXXFLAGS) $(COMPILE_CXX_FLAGS) $(CXX_DEBUG_COMPILE_FLAGS) $(DEFINES_DEBUG) $(DEFINES)
-debug: export CPPFLAGS := $(CPPFLAGS) $(COMPILE_CPP_FLAGS) $(CPP_DEBUG_COMPILE_FLAGS) $(DEFINES_DEBUG) $(DEFINES)
+debug: export CFLAGS := $(COMPILE_C_FLAGS) $(C_DEBUG_COMPILE_FLAGS) $(DEFINES_DEBUG) $(DEFINES)
+debug: export CXXFLAGS := $(COMPILE_CXX_FLAGS) $(CXX_DEBUG_COMPILE_FLAGS) $(DEFINES_DEBUG) $(DEFINES)
 debug: export ASMFLAGS := $(COMPILE_ASM_FLAGS) $(ASM_DEBUG_COMPILE_FLAGS) $(DEFINES_DEBUG) $(DEFINES)
 debug: export LDFLAGS := $(LINK_FLAGS) $(LINK_FLAGS_DEBUG) $(LIBDIR) $(DLIBDIR) $(LDSCRIPT)
 debug: export LIBS := $(LIBS) $(DLIBS)
@@ -116,15 +116,15 @@ $(BIN_PATH)/$(BIN_NAME).a: $(OBJECTS)
 # if the source file is in a subdir, create this subdir in the build dir
 $(BUILD_PATH)/%.c.o: ./%.c
 	$(MKDIR) -p $(dir $@) 
-	$(TOOLCHAIN_PREFIX)$(CXX) $(CXXFLAGS) $(INCLUDES) -MP -MMD -c $< -o $@
+	$(TOOLCHAIN_PREFIX)$(C_COMPILER) $(CFLAGS) $(INCLUDES) -MP -MMD -c $< -o $@
 
 $(BUILD_PATH)/%.cpp.o: ./%.cpp
 	$(MKDIR) -p $(dir $@) 
-	$(TOOLCHAIN_PREFIX)$(CPP) $(CPPFLAGS) $(INCLUDES) -MP -MMD -c $< -o $@
+	$(TOOLCHAIN_PREFIX)$(CXX_COMPILER) $(CXXFLAGS) $(INCLUDES) -MP -MMD -c $< -o $@
 
 $(BUILD_PATH)/%.s.o: ./%.s
 	$(MKDIR) -p $(dir $@) 
-	$(TOOLCHAIN_PREFIX)$(CXX) $(ASMFLAGS) $(INCLUDES) -MP -MMD -c $< -o $@
+	$(TOOLCHAIN_PREFIX)$(C_COMPILER) $(ASMFLAGS) $(INCLUDES) -MP -MMD -c $< -o $@
 
 .PHONY: release debug dirs all clean clean_debug clean_release gdbftdidebug gdbftdirelease gdbusbdebug gdbusbrelease
 
