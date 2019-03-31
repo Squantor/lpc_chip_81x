@@ -31,8 +31,15 @@
 #define __SYS_CONFIG_H_
 
 /* Build for LPC8XX chip family */
+/* #define CHIP_LPC8XX */
+/* #define CHIP_LPC82X */
+
+/* Added additional checks if the proper MCU type is defined*/
+#if !defined(CHIP_LPC82X) && !defined(CHIP_LPC81X)
+#error "NO MCU DEFINED OR UNSUPPORTED MCU TYPE!"
+#else
 #define CHIP_LPC8XX
-#define CHIP_LPC82X
+#endif
 
 #endif /* __SYS_CONFIG_H_ */
 
